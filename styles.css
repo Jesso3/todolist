@@ -58,3 +58,16 @@ body * {
 .close:hover {
   background-color: rgba(200, 200, 200, 0.3);
 }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 2s forwards;
+}

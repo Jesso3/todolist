@@ -7,11 +7,7 @@
   </head>
   <body>
     <div class="todolist">
-      <div class="checkboxes">
-        <input type="checkbox" />
-        <label for="item1">item1</label>
-        <button type="click">x</button>
-      </div>
+      <div class="checkboxes"></div>
 
       <div>
         <form class="text-submit">
@@ -49,6 +45,10 @@
           newDiv.appendChild(closeButton);
 
           document.querySelector(".checkboxes").appendChild(newDiv);
+
+          closeButton.addEventListener("click", (e) => {
+            document.querySelector(".checkboxes").removeChild(newDiv);
+          });
 
           document.getElementById("text-input").value = "";
         }

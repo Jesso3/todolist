@@ -20,5 +20,39 @@
         </form>
       </div>
     </div>
+    <script>
+      document.querySelector(".text-submit").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let value = document.getElementById("text-input").value;
+
+        if (/\S+/.test(value)) {
+          let newDiv = document.createElement("div");
+          let newInput = document.createElement("input");
+          let newLabel = document.createElement("label");
+          let closeButton = document.createElement("button");
+
+          newInput.type = "checkbox";
+          newInput.id = value;
+          newInput.className = "check";
+
+          newLabel.setAttribute("for", value);
+          newLabel.innerHTML = value;
+
+          closeButton.className = "close";
+          closeButton.innerHTML = "x";
+
+          newDiv.className = "item";
+          newDiv.id = value;
+          newDiv.appendChild(newInput);
+          newDiv.appendChild(newLabel);
+          newDiv.appendChild(closeButton);
+
+          document.querySelector(".checkboxes").appendChild(newDiv);
+
+          document.getElementById("text-input").value = "";
+        }
+      });
+    </script>
   </body>
 </html>
